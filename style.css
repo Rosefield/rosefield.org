@@ -1,0 +1,113 @@
+
+body {
+    color: #444;
+}
+
+div {
+    display: block;
+}
+
+.main {
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 0 10px;
+    margin-left: 260px;
+    line-height: 1.6;
+}
+
+.nav {
+    position:fixed;
+    float: left;
+    width: 250px;
+    height: 100%;
+}
+
+.project-links {
+    text-align: left;
+    list-style-type: none;
+    margin-left: 16px;
+}
+
+.project-link {
+    outline: none;
+    text-decoration: none; 
+    display: block;
+    width: 100%;
+}
+
+
+.project-link:link {
+    color: #9aa2a8;
+}
+
+.project-link:visited {
+    color: #9aa2a8;
+}
+
+.project-link:hover {
+    color: #2c2e33;
+}
+
+.project-link:focus {
+    color: #2c2e33;
+}
+
+.project-link:active {
+    color: #2c2e33;
+}
+
+.focus {
+    color: #2c2e33 !important;
+}
+
+footer {
+    display: block;
+    width: 100%;
+}
+
+.download-link {
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+}
+
+.download-link:link {
+    color: #6e7177;
+}
+
+.download-link:visited {
+    color: #6e7177;
+}
+
+.download-link:hover {
+    color: #2c2e33
+}
+
+.download-link:focus {
+    color: #2c2e33
+}
+
+
+.inline-link {
+    outline: none;
+    text-decoration: none;
+}
+
+.inline-link:link {
+    color: #9aa2a8;
+}
+
+.inline-link:visited {
+    color: #9aa2a8;
+}
+
+.inline-link:hover {
+    color: #2c2e33
+}
+
+.inline-link:focus {
+    color: #2c2e33
+}
