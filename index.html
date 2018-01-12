@@ -14,24 +14,97 @@ Schuyler Rosefield
 
 <div class="nav">
     <div class="project-links">
-        <a class="project-link" id="AboutLink" href="#About">About</a>
-<a class="project-link" id="ProjectsLink" href="#Projects">Selected Projects</a>
-<a class="project-link" id="InterestsLink" href="#Interests">Interests</a>
+        <a class="project-link" id="aboutLink" href="#about">About</a>
+<a class="project-link" id="projectsLink" href="#projects">Projects</a>
+<a class="project-link" id="resumeLink" href="#resume">Resume</a>
     </div>
 </div>
                                                                                                                                                                                                                                                                  
 
 <article class="main">
-    <header><h1>Schuyler Rosefield</h1></header>
+    <header class="center">
+        <h1>Schuyler Rosefield</h1>
+        <img src='files/profile_image.png' width='300px' height='400px' />
+    </header>
 
-    Hi I am Schuyler
-There will be projects here
-All crypto all day every day
+        <article class="project" id="about">
+        <header><h3>About</h3></header>
+
+        <section>
+            <p>
+
+            I am a long-term crypto nerd and security fanatic. I recently graduated from <a href="https://northeastern.edu">Northeastern University</a> with a BS in Mathematics. Further, I intend on pursuing a PhD in Computer Science researching cryptography and its applications towards privacy. In particular I hope to improve the efficiency of fully homomorphic encryption so that it can be more widely deployed to solve problems with encrypted search or secure computation.
+
+            </p>
+
+
+            <p>
+            I am currently employed at <a href="https://ngpvan.com">NGP VAN</a> as an individual contributor focusing on application security and design. Aside from security contributions I also worked to create many of the client reporting tools available as part of the application.
+
+            </p>
+
+            <p>
+            The best way to contact me is to send an email to schuyler (at) rosefield.org.
+            </p>
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </article>
+
+    <article class="project" id="projects">
+        <header><h3>Projects</h3></header>
+
+        <section>
+
+            <p>
+                One of my older projects is a <b>big integer library</b>, specifically designed for high performance calculation over finite fields. This implements methods for (constant-time) modular exponentiation, random number generation, and primality checking. Performance compares favorably to OpenSSL's specialized implementation of RSA encryption (within a factor of 4) for 4k keys, despite using variable-width integers. <b>N.B.</b> While originally designed to test public key cryptographic operations this library should not be used for any security-critical applications. Further progress could be made to support other field types (e.g. finite field over an elliptic curve) or better composability (e.g. a generic `field` type to allow rationals/polynomials/etc).
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/BigNum">View on GitHub</a>   
+
+            <p>
+                As another fun project is a <b>song fingerprinting</b> application. This can be used to generate a database of song "fingerprints" and check for membership of samples. It is robust to small changes in pitch, frequency, and noise (such as identifying a song from a cell phone recording). 
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/SongFingerprint">View on GitHub</a>   
+
+            <p>
+                <b>DHT file store</b> is an attempt to implement a BitTorrent-like file storage protocol using distributed hash tables with asyncio Python. Given an initial node a new client can bootstrap themselves into the network where they can store and retrieve files identified by the hashes of their contents. Each file chunk is automatically distributed to a configurable (default k=7) number of other nodes for resiliency. Locally, a file that has been distributed to the network is just a list of all of the hashes for each 1MB chunk in the original file.  Possible improvements include a better UX for file storage/retrieval such as having a FUSE file system that automatically reads and stores to the network. 
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/DHTFileStore">View on GitHub</a>   
+
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </article>
+
+    <article class="project" id="resume">
+        <header><h3>Resume</h3></header>
+
+        <section>
+            
+        
+        </section>
+
+        <footer>
+            <a class="download-link" href="files/resume.pdf">View Resume (pdf)</a>   
+        </footer>
+
+    </article>
+
+
+    <hr>
+    <footer class="center">
+        The code used to generate this site can be found <a href="https://github.com/Rosefield/rosefield.org">here</a>.
+
+        <div class="date-created">Last updated: 2018-01-12</div>
+    </footer>
 
 </article>
 
-
 </body>
-
-
 </html>

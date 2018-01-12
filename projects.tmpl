@@ -1,0 +1,27 @@
+    <article class="project" id="{id}">
+        <header><h3>{name}</h3></header>
+
+        <section>
+
+            <p>
+                One of my older projects is a <b>big integer library</b>, specifically designed for high performance calculation over finite fields. This implements methods for (constant-time) modular exponentiation, random number generation, and primality checking. Performance compares favorably to OpenSSL's specialized implementation of RSA encryption (within a factor of 4) for 4k keys, despite using variable-width integers. <b>N.B.</b> While originally designed to test public key cryptographic operations this library should not be used for any security-critical applications. Further progress could be made to support other field types (e.g. finite field over an elliptic curve) or better composability (e.g. a generic `field` type to allow rationals/polynomials/etc).
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/BigNum">View on GitHub</a>   
+
+            <p>
+                As another fun project is a <b>song fingerprinting</b> application. This can be used to generate a database of song "fingerprints" and check for membership of samples. It is robust to small changes in pitch, frequency, and noise (such as identifying a song from a cell phone recording). 
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/SongFingerprint">View on GitHub</a>   
+
+            <p>
+                <b>DHT file store</b> is an attempt to implement a BitTorrent-like file storage protocol using distributed hash tables with asyncio Python. Given an initial node a new client can bootstrap themselves into the network where they can store and retrieve files identified by the hashes of their contents. Each file chunk is automatically distributed to a configurable (default k=7) number of other nodes for resiliency. Locally, a file that has been distributed to the network is just a list of all of the hashes for each 1MB chunk in the original file.  Possible improvements include a better UX for file storage/retrieval such as having a FUSE file system that automatically reads and stores to the network. 
+            </p>
+            <a class="download-link" href="https://github.com/Rosefield/DHTFileStore">View on GitHub</a>   
+
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </article>

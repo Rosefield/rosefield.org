@@ -7,25 +7,33 @@ function() {
     var getSectionLinks = function() {
         return Array.from(document.querySelectorAll('.project-link'));
     };
+    var links = getSectionLinks();
+    links.forEach(function(l) {
+        
+        l.onclick = function(e) { 
+            setFocusOnSectionLink(l.id) 
 
-    var setFocusOnSectionLink = function(sectionId) {
-        var links = getSectionLinks();
+        };
+        });
+
+    var setFocusOnSectionLink = function(id) {
 
         links.forEach(function(l) { l.classList.remove('focus'); });
 
-        var focusedEl = links.filter(function(x) { return x.id === sectionId + "Link"; })[0];
+        var focusedEl = links.filter(function(x) { return x.id === id + "Link" || x.id === id; })[0];
 
         focusedEl.classList.add('focus');
         
     };
 
-    var focusedSection = '';
+    var sections = getProjectSections();
+
+    var focusedSection = sections[0].id;
+    setFocusOnSectionLink(focusedSection);
 
     var scrollEvent = function(e) {
-        var sections = getProjectSections();
         var numSections = sections.length;
 
-        
         var offsets = sections.map(function(s) { return s.getBoundingClientRect().top });
 
         //var bodyBottom = document.body.getBoundingClientRect().bottom;
@@ -39,7 +47,9 @@ function() {
                             .reverse()
                             .findIndex(function(o) { return o; });
 
-        console.log(overSection);
+        if(overSection >= numSections) {
+            return;
+        }
         
         var sectionId = sections[overSection].id;
         if(focusedSection !== sectionId) {
@@ -47,6 +57,7 @@ function() {
             setFocusOnSectionLink(sectionId);
         }
     };
+
 
     window.addEventListener('scroll', scrollEvent);
     
