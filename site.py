@@ -3,6 +3,10 @@ import os
 import time
 import argparse
 from datetime import datetime
+from base64 import b64encode
+from hashlib import sha256
+import urllib.parse
+import zipfile
 
 Article = namedtuple('Article', ['id', 'name', 'content'])
 
@@ -55,10 +59,11 @@ def create_link(article):
 
     return f'<a class="project-link" id="{article.id}Link" href="#{article.id}">{article.name}</a>'
 
-def index():
+def index(scripts):
 
     name = 'Index'
     r = common_replacements(name)
+    r['scripts'] = scripts
 
     articles = [about(), 
                 #interests(), 
@@ -102,11 +107,64 @@ def resume():
 
     return Article(r['id'], r['name'], content)
 
+def hash_file(name):
+    with open(name) as f:
+        content = f.read().encode('utf-8')
+        sha = sha256()
+        sha.update(content)
+
+        hash = sha.digest()
+        return b64encode(hash).decode('utf-8')
+
+def format_css(hash, file):
+    return f'<link rel="stylesheet" integrity="sha256-{hash}" href="{file}" />'
+
+def format_script(hash, file):
+    return f'<script async type="text/javascript" integrity="sha256-{hash}" src="{file}"></script>'
+
+
+def gen_script(name):
+
+    formatters = {"css": format_css, "js": format_script}
+
+    files[name] = get_file_time(name)
+    hash = hash_file(name)
+    type = name.split('.')[-1]
+    name = name + "?v=" + urllib.parse.quote_plus(hash)
+
+    return formatters[type](hash, name)
+
+def pre():
+
+    other_files = ['files/resume.pdf',
+                    'files/profile_image.jpg']
+    
+    for f in other_files:
+        files[f] = get_file_time(f)
+
+    fs = ['script.js', 'style.css']
+    
+    scripts = "\n".join([gen_script(f) for f in fs])
+
+    return scripts
+    
+
+def post():
+    
+    with zipfile.ZipFile('site.zip', 'w') as z:
+        for name in files.keys():
+            z.write(name)
+
+
 def run():
-    a = index()
-    with open(a.id + '.html', 'w') as f:
+    scripts = pre()
+    a = index(scripts)
+    index_file = a.id + '.html'
+    with open(index_file, 'w') as f:
         f.write(a.content)
-        print(f'wrote {a.id}.html')
+        print(f'wrote {index_file}')
+    files[index_file] = get_file_time(index_file)
+    post()
 
 def main():
     arg = argparse.ArgumentParser()

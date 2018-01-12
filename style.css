@@ -10,7 +10,7 @@ div {
 .main {
     margin: 40px auto;
     max-width: 700px;
-    padding: 0 10px;
+    padding: 0 100px;
 #    margin-left: 260px;
     line-height: 1.6;
 }
@@ -18,7 +18,7 @@ div {
 .nav {
     position:fixed;
     float: left;
-    width: 250px;
+    width: 90px;
     height: 100%;
 }
 
