@@ -6,7 +6,7 @@ Schuyler Rosefield
 </title>
 
 <script async type="text/javascript" integrity="sha256-/NuVMVdYg8s9CALdOvgmz2WHpaBnVuXsy1I0hMigYwg=" src="script.js?v=%2FNuVMVdYg8s9CALdOvgmz2WHpaBnVuXsy1I0hMigYwg%3D"></script>
-<link rel="stylesheet" integrity="sha256-9buNjlEjAvP2GT/Nxf0onU2TkfEyq4KxteGItXSpGWA=" href="style.css?v=9buNjlEjAvP2GT%2FNxf0onU2TkfEyq4KxteGItXSpGWA%3D" />
+<link rel="stylesheet" integrity="sha256-+8RT9s/SpB8XSZT9gOXZ4QjWLopwb7uqAK7Zomsa8UY=" href="style.css?v=%2B8RT9s%2FSpB8XSZT9gOXZ4QjWLopwb7uqAK7Zomsa8UY%3D" />
 
 </head>
 
@@ -15,6 +15,8 @@ Schuyler Rosefield
 <div class="nav">
     <div class="project-links">
         <a class="project-link" id="aboutLink" href="#about">About</a>
+<a class="project-link" id="researchLink" href="#research">Research</a>
+<a class="project-link" id="workLink" href="#work">Work</a>
 <a class="project-link" id="projectsLink" href="#projects">Projects</a>
 <a class="project-link" id="resumeLink" href="#resume">Resume</a>
     </div>
@@ -33,20 +35,57 @@ Schuyler Rosefield
         <section>
             <p>
 
-            I am a long-term crypto nerd and security fanatic. I recently graduated from <a href="https://northeastern.edu">Northeastern University</a> with a BS in Mathematics, and will be continuing as a PhD student in Computer Science researching cryptography and its applications towards privacy. In particular I hope to make recent cryptographic primitives such as fully homomorphic encryption more computationally efficient so that they can be deployed more widely.
-
-            </p>
-
-
-            <p>
-            I worked at <a href="https://ngpvan.com">NGP VAN</a> as a software engineer focused on application security and design. My primary responsibilities were guiding the engineering security roadmap and proactively identifying and fixing application vulnerabilities.
-
-            Aside from security contributions I also worked to create many of the client reporting tools available as part of the application, such as a high performance customizable grid report builder and a WYSIWIG PDF report generator.
-
+            I am a long-term crypto nerd and security fanatic. 
+I graduated from <a href="https://northeastern.edu">Northeastern University</a> with a BS in Mathematics, and am continuing as a PhD student in Computer Science researching cryptography with abhi shelat.
+In particular, I am researching specialized efficient MPC protocols so that privacy-preserving computation can be deployed more widely.
+Additionally I have interests in fully homomorphic encryption and searchable encryption.
             </p>
 
             <p>
             The best way to contact me is to send an email to schuyler (at) rosefield (dot) org.
+            </p>
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </article>
+
+    <article class="project" id="research">
+        <header><h3>Research</h3></header>
+
+        <section>
+            <header>
+            <b>Multiparty Generation of an RSA Modulus</b>
+            </br>
+            <i>Joint work with Megan Chen, Ran Cohen, Jack Doerner, Yashvanth Kondi, Eysa Lee, and abhi shelat</i>
+            </header>
+            <aside>This work presents an efficient method for jointly producing an RSA modulus. This is achieved through efficiently combining the sampling and seiving phases to produce candidate moduli, and a privacy-free check that catches cheating on invalid moduli.</aside>
+
+        </section>
+
+        <footer>
+
+        </footer>
+
+    </article>
+
+    <article class="project" id="work">
+        <header><h3>Work</h3></header>
+
+        <section>
+            <p>
+
+            Over the summer of 2019 I worked in Group 53 at <a href="https://www.ll.mit.edu/">MIT Lincoln Lab</a> as a research intern.
+During this internship I helped develop the internal MPC framework, implementing new primitives and an asyncronous execution model for certain computations.
+Additionally, I developed an entry for Track IV of the <a href="http://www.humangenomeprivacy.org/2019/competition-tasks.html">IDASH Privacy & Security competition</a>.
+With this project I evaluated models for MPC-friendliness, efficiency, and accuracy, and then implemented code to train the neural network in a distributed and privacy-preserving manner under MPC. 
+            <a class="download-link" href="https://github.com/Rosefield/IDASH2019Submission">View Submission</a>   
+            </p>
+            <p>
+            Prior to my PhD I worked at <a href="https://ngpvan.com">NGP VAN</a> as a software engineer focused on application security and design.
+            Aside from security contributions I helped create many of the client reporting tools available as part of the application, such as a high performance customizable grid report builder, a WYSIWIG PDF report generator, and an online form creator.
             </p>
         </section>
 
@@ -89,7 +128,6 @@ Schuyler Rosefield
 
         <section>
             
-        
         </section>
 
         <footer>
@@ -103,7 +141,7 @@ Schuyler Rosefield
     <footer class="center">
         The code used to generate this site can be found <a href="https://github.com/Rosefield/rosefield.org">here</a>.
 
-        <div class="date-created">Last updated: 2018-07-04</div>
+        <div class="date-created">Last updated: 2020-03-03</div>
     </footer>
 
 </article>
