@@ -161,8 +161,8 @@ def candidacy(scripts):
     r['scripts'] = scripts
     r['title'] = 'Schuyler Rosefield Candidacy Form'
 
-    articles = [candidacy_statement(),
-                candidacy_link()] 
+    articles = [candidacy_link(),
+                candidacy_statement()] 
                 
     r['articles'] = '\n'.join([a.content for a in articles])
     
